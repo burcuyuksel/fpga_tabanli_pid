@@ -1,5 +1,5 @@
 Analysis & Synthesis report for adc_serial_control
-Thu Jun 14 15:40:51 2018
+Thu Jun 14 16:53:59 2018
 Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
 
 
@@ -21,16 +21,18 @@ Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
  13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Parameter Settings for User Entity Instance: Top-level Entity: |adc_serial_control3
- 16. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4
- 17. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3
- 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
- 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 20. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
- 21. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
- 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 23. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
- 24. lpm_mult Parameter Settings by Entity Instance
- 25. Analysis & Synthesis Messages
+ 16. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult5
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 18. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4
+ 19. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 22. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 23. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 25. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
+ 26. lpm_mult Parameter Settings by Entity Instance
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -56,19 +58,19 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 14 15:40:51 2018    ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 14 16:53:59 2018    ;
 ; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
 ; Revision Name                      ; adc_serial_control                       ;
 ; Top-level Entity Name              ; adc_serial_control3                      ;
 ; Family                             ; Cyclone IV E                             ;
-; Total logic elements               ; 2,052                                    ;
-;     Total combinational functions  ; 2,025                                    ;
+; Total logic elements               ; 2,721                                    ;
+;     Total combinational functions  ; 2,694                                    ;
 ;     Dedicated logic registers      ; 107                                      ;
 ; Total registers                    ; 107                                      ;
 ; Total pins                         ; 62                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
-; Embedded Multiplier 9-bit elements ; 10                                       ;
+; Embedded Multiplier 9-bit elements ; 14                                       ;
 ; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
 
@@ -174,7 +176,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+
 ; adc_serial_control3.vhd          ; yes             ; User VHDL File               ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/adc_serial_control3.vhd ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_mult.tdf               ;
-; db/mult_j9t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/mult_j9t.tdf         ;
+; db/mult_p9t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/mult_p9t.tdf         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_divide.tdf             ;
+; db/lpm_divide_s0p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/lpm_divide_s0p.tdf   ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/abs_divider_nbg.tdf  ;
+; db/alt_u_div_c7f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/alt_u_div_c7f.tdf    ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/add_sub_7pc.tdf      ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/add_sub_8pc.tdf      ;
+; db/lpm_abs_5v9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/lpm_abs_5v9.tdf      ;
+; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/lpm_abs_i0a.tdf      ;
+; db/mult_98t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/mult_98t.tdf         ;
 ; multcore.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/multcore.tdf               ;
 ; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/mpar_add.tdf               ;
 ; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_add_sub.tdf            ;
@@ -182,14 +193,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/add_sub_n9h.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/add_sub_n9h.tdf      ;
 ; db/add_sub_ckh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/add_sub_ckh.tdf      ;
 ; altshift.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/altshift.tdf               ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_divide.tdf             ;
 ; db/lpm_divide_d2p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/lpm_divide_d2p.tdf   ;
 ; db/abs_divider_8dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/abs_divider_8dg.tdf  ;
 ; db/alt_u_div_eaf.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/alt_u_div_eaf.tdf    ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/add_sub_7pc.tdf      ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/add_sub_8pc.tdf      ;
 ; db/lpm_abs_m0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/lpm_abs_m0a.tdf      ;
-; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/lpm_abs_i0a.tdf      ;
 ; db/lpm_divide_72p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/lpm_divide_72p.tdf   ;
 ; db/abs_divider_2dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/abs_divider_2dg.tdf  ;
 ; db/alt_u_div_2af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/db/alt_u_div_2af.tdf    ;
@@ -209,28 +216,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 2,052       ;
+; Estimated Total logic elements              ; 2,721       ;
 ;                                             ;             ;
-; Total combinational functions               ; 2025        ;
+; Total combinational functions               ; 2694        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 414         ;
-;     -- 3 input functions                    ; 762         ;
-;     -- <=2 input functions                  ; 849         ;
+;     -- 4 input functions                    ; 481         ;
+;     -- 3 input functions                    ; 1130        ;
+;     -- <=2 input functions                  ; 1083        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 1213        ;
-;     -- arithmetic mode                      ; 812         ;
+;     -- normal mode                          ; 1570        ;
+;     -- arithmetic mode                      ; 1124        ;
 ;                                             ;             ;
 ; Total registers                             ; 107         ;
 ;     -- Dedicated logic registers            ; 107         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 62          ;
-; Embedded Multiplier 9-bit elements          ; 10          ;
+; Embedded Multiplier 9-bit elements          ; 14          ;
 ; Maximum fan-out node                        ; i_clk~input ;
 ; Maximum fan-out                             ; 107         ;
-; Total fan-out                               ; 6052        ;
-; Average fan-out                             ; 2.63        ;
+; Total fan-out                               ; 7854        ;
+; Average fan-out                             ; 2.64        ;
 +---------------------------------------------+-------------+
 
 
@@ -239,7 +246,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Library Name ;
 +------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |adc_serial_control3                           ; 2025 (493)        ; 107 (107)    ; 0           ; 0          ; 10           ; 0       ; 5         ; 62   ; 0            ; |adc_serial_control3                                                                                                                        ;              ;
+; |adc_serial_control3                           ; 2694 (718)        ; 107 (107)    ; 0           ; 0          ; 14           ; 0       ; 7         ; 62   ; 0            ; |adc_serial_control3                                                                                                                        ;              ;
 ;    |lpm_divide:Div0|                           ; 202 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0                                                                                                        ;              ;
 ;       |lpm_divide_82p:auto_generated|          ; 202 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0|lpm_divide_82p:auto_generated                                                                          ;              ;
 ;          |abs_divider_3dg:divider|             ; 202 (10)          ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0|lpm_divide_82p:auto_generated|abs_divider_3dg:divider                                                  ;              ;
@@ -255,6 +262,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |abs_divider_8dg:divider|             ; 540 (36)          ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider                                                  ;              ;
 ;             |alt_u_div_eaf:divider|            ; 479 (479)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|alt_u_div_eaf:divider                            ;              ;
 ;             |lpm_abs_i0a:my_abs_num|           ; 25 (25)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|lpm_abs_i0a:my_abs_num                           ;              ;
+;    |lpm_divide:Div3|                           ; 428 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div3                                                                                                        ;              ;
+;       |lpm_divide_s0p:auto_generated|          ; 428 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div3|lpm_divide_s0p:auto_generated                                                                          ;              ;
+;          |abs_divider_nbg:divider|             ; 428 (46)          ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div3|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider                                                  ;              ;
+;             |alt_u_div_c7f:divider|            ; 359 (359)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div3|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider                            ;              ;
+;             |lpm_abs_i0a:my_abs_num|           ; 23 (23)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div3|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|lpm_abs_i0a:my_abs_num                           ;              ;
 ;    |lpm_mult:Mult0|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult0                                                                                                         ;              ;
 ;       |mult_5dt:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult0|mult_5dt:auto_generated                                                                                 ;              ;
 ;    |lpm_mult:Mult1|                            ; 14 (0)            ; 0 (0)        ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult1                                                                                                         ;              ;
@@ -270,7 +282,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                |lpm_add_sub:adder[0]|          ; 16 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ;              ;
 ;                   |add_sub_ckh:auto_generated| ; 16 (16)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_ckh:auto_generated ;              ;
 ;    |lpm_mult:Mult4|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4                                                                                                         ;              ;
-;       |mult_j9t:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|mult_j9t:auto_generated                                                                                 ;              ;
+;       |mult_98t:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|mult_98t:auto_generated                                                                                 ;              ;
+;    |lpm_mult:Mult5|                            ; 16 (0)            ; 0 (0)        ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult5                                                                                                         ;              ;
+;       |mult_p9t:auto_generated|                ; 16 (16)           ; 0 (0)        ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult5|mult_p9t:auto_generated                                                                                 ;              ;
 +------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -281,12 +295,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                             ; Number Used ;
 +---------------------------------------+-------------+
 ; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 5           ;
+; Simple Multipliers (18-bit)           ; 7           ;
 ; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 10          ;
-; Signed Embedded Multipliers           ; 1           ;
+; Embedded Multiplier 9-bit elements    ; 14          ;
+; Signed Embedded Multipliers           ; 2           ;
 ; Unsigned Embedded Multipliers         ; 4           ;
-; Mixed Sign Embedded Multipliers       ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 1           ;
 ; Variable Sign Embedded Multipliers    ; 0           ;
 ; Dedicated Input Shift Register Chains ; 0           ;
 +---------------------------------------+-------------+
@@ -309,113 +323,113 @@ Encoding Type:  One-Hot
 +-------------------------+---------------+-----------------+-----------------+----------------+--------------------+-------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                     ;
-+------------------------------------------------------+-------------------------+------------------------+
-; Latch Name                                           ; Latch Enable Signal     ; Free of Timing Hazards ;
-+------------------------------------------------------+-------------------------+------------------------+
-; pid_sum[1]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[19]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[18]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[17]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[16]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[15]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[14]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[13]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[12]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[11]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[10]                                          ; state.CalculatePID      ; yes                    ;
-; pid_sum[9]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[8]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[7]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[6]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[5]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[4]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[3]                                           ; state.CalculatePID      ; yes                    ;
-; pid_sum[2]                                           ; state.CalculatePID      ; yes                    ;
-; p[1]                                                 ; state.CalculatePID      ; yes                    ;
-; p[19]                                                ; state.CalculatePID      ; yes                    ;
-; p[18]                                                ; state.CalculatePID      ; yes                    ;
-; p[17]                                                ; state.CalculatePID      ; yes                    ;
-; p[16]                                                ; state.CalculatePID      ; yes                    ;
-; p[15]                                                ; state.CalculatePID      ; yes                    ;
-; p[14]                                                ; state.CalculatePID      ; yes                    ;
-; p[13]                                                ; state.CalculatePID      ; yes                    ;
-; p[12]                                                ; state.CalculatePID      ; yes                    ;
-; p[11]                                                ; state.CalculatePID      ; yes                    ;
-; p[10]                                                ; state.CalculatePID      ; yes                    ;
-; p[9]                                                 ; state.CalculatePID      ; yes                    ;
-; p[8]                                                 ; state.CalculatePID      ; yes                    ;
-; p[7]                                                 ; state.CalculatePID      ; yes                    ;
-; p[6]                                                 ; state.CalculatePID      ; yes                    ;
-; p[5]                                                 ; state.CalculatePID      ; yes                    ;
-; p[4]                                                 ; state.CalculatePID      ; yes                    ;
-; p[3]                                                 ; state.CalculatePID      ; yes                    ;
-; p[2]                                                 ; state.CalculatePID      ; yes                    ;
-; Error[0]                                             ; state.CalculateNewError ; yes                    ;
-; Error[15]                                            ; state.CalculateNewError ; yes                    ;
-; Error[14]                                            ; state.CalculateNewError ; yes                    ;
-; Error[13]                                            ; state.CalculateNewError ; yes                    ;
-; Error[12]                                            ; state.CalculateNewError ; yes                    ;
-; Error[11]                                            ; state.CalculateNewError ; yes                    ;
-; Error[10]                                            ; state.CalculateNewError ; yes                    ;
-; Error[9]                                             ; state.CalculateNewError ; yes                    ;
-; Error[8]                                             ; state.CalculateNewError ; yes                    ;
-; Error[7]                                             ; state.CalculateNewError ; yes                    ;
-; Error[6]                                             ; state.CalculateNewError ; yes                    ;
-; Error[5]                                             ; state.CalculateNewError ; yes                    ;
-; Error[4]                                             ; state.CalculateNewError ; yes                    ;
-; Error[3]                                             ; state.CalculateNewError ; yes                    ;
-; Error[2]                                             ; state.CalculateNewError ; yes                    ;
-; Error[1]                                             ; state.CalculateNewError ; yes                    ;
-; inter[0]                                             ; state.CalculateNewError ; yes                    ;
-; inter[15]                                            ; state.CalculateNewError ; yes                    ;
-; inter[14]                                            ; state.CalculateNewError ; yes                    ;
-; inter[13]                                            ; state.CalculateNewError ; yes                    ;
-; inter[12]                                            ; state.CalculateNewError ; yes                    ;
-; inter[11]                                            ; state.CalculateNewError ; yes                    ;
-; inter[10]                                            ; state.CalculateNewError ; yes                    ;
-; inter[9]                                             ; state.CalculateNewError ; yes                    ;
-; inter[8]                                             ; state.CalculateNewError ; yes                    ;
-; inter[7]                                             ; state.CalculateNewError ; yes                    ;
-; inter[6]                                             ; state.CalculateNewError ; yes                    ;
-; inter[5]                                             ; state.CalculateNewError ; yes                    ;
-; inter[4]                                             ; state.CalculateNewError ; yes                    ;
-; inter[3]                                             ; state.CalculateNewError ; yes                    ;
-; inter[2]                                             ; state.CalculateNewError ; yes                    ;
-; inter[1]                                             ; state.CalculateNewError ; yes                    ;
-; sAdc2[31]                                            ; state.Reset             ; yes                    ;
-; sAdc2[30]                                            ; state.Reset             ; yes                    ;
-; sAdc2[29]                                            ; state.Reset             ; yes                    ;
-; sAdc2[28]                                            ; state.Reset             ; yes                    ;
-; sAdc2[27]                                            ; state.Reset             ; yes                    ;
-; sAdc2[26]                                            ; state.Reset             ; yes                    ;
-; sAdc2[25]                                            ; state.Reset             ; yes                    ;
-; sAdc2[24]                                            ; state.Reset             ; yes                    ;
-; sAdc2[23]                                            ; state.Reset             ; yes                    ;
-; sAdc2[22]                                            ; state.Reset             ; yes                    ;
-; sAdc2[21]                                            ; state.Reset             ; yes                    ;
-; sAdc2[20]                                            ; state.Reset             ; yes                    ;
-; sAdc2[19]                                            ; state.Reset             ; yes                    ;
-; sAdc2[18]                                            ; state.Reset             ; yes                    ;
-; sAdc2[17]                                            ; state.Reset             ; yes                    ;
-; sAdc2[16]                                            ; state.Reset             ; yes                    ;
-; sAdc2[15]                                            ; state.Reset             ; yes                    ;
-; sAdc2[14]                                            ; state.Reset             ; yes                    ;
-; sAdc2[13]                                            ; state.Reset             ; yes                    ;
-; sAdc2[12]                                            ; state.Reset             ; yes                    ;
-; sAdc2[11]                                            ; state.Reset             ; yes                    ;
-; sAdc2[10]                                            ; state.Reset             ; yes                    ;
-; sAdc2[9]                                             ; state.Reset             ; yes                    ;
-; sAdc2[8]                                             ; state.Reset             ; yes                    ;
-; sAdc2[7]                                             ; state.Reset             ; yes                    ;
-; sAdc2[6]                                             ; state.Reset             ; yes                    ;
-; sAdc2[5]                                             ; state.Reset             ; yes                    ;
-; sAdc2[4]                                             ; state.Reset             ; yes                    ;
-; sAdc2[3]                                             ; state.Reset             ; yes                    ;
-; sAdc2[2]                                             ; state.Reset             ; yes                    ;
-; Number of user-specified and inferred latches = 114  ;                         ;                        ;
-+------------------------------------------------------+-------------------------+------------------------+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; pid_sum[31]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[30]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[29]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[28]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[27]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[26]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[25]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[24]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[23]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[22]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[21]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[20]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[19]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[18]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[17]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[16]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[15]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[14]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[13]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[12]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[11]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[10]                                          ; state.CalculatePID  ; yes                    ;
+; pid_sum[9]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[8]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[7]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[6]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[5]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[4]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[3]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[2]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[1]                                           ; state.CalculatePID  ; yes                    ;
+; pid_sum[0]                                           ; state.CalculatePID  ; yes                    ;
+; d[31]                                                ; state.CalculatePID  ; yes                    ;
+; p[31]                                                ; state.CalculatePID  ; yes                    ;
+; i[31]                                                ; state.CalculatePID  ; yes                    ;
+; p[30]                                                ; state.CalculatePID  ; yes                    ;
+; i[30]                                                ; state.CalculatePID  ; yes                    ;
+; p[29]                                                ; state.CalculatePID  ; yes                    ;
+; i[29]                                                ; state.CalculatePID  ; yes                    ;
+; p[28]                                                ; state.CalculatePID  ; yes                    ;
+; i[28]                                                ; state.CalculatePID  ; yes                    ;
+; p[27]                                                ; state.CalculatePID  ; yes                    ;
+; i[27]                                                ; state.CalculatePID  ; yes                    ;
+; p[26]                                                ; state.CalculatePID  ; yes                    ;
+; i[26]                                                ; state.CalculatePID  ; yes                    ;
+; p[25]                                                ; state.CalculatePID  ; yes                    ;
+; i[25]                                                ; state.CalculatePID  ; yes                    ;
+; p[24]                                                ; state.CalculatePID  ; yes                    ;
+; i[24]                                                ; state.CalculatePID  ; yes                    ;
+; p[23]                                                ; state.CalculatePID  ; yes                    ;
+; i[23]                                                ; state.CalculatePID  ; yes                    ;
+; p[22]                                                ; state.CalculatePID  ; yes                    ;
+; i[22]                                                ; state.CalculatePID  ; yes                    ;
+; p[21]                                                ; state.CalculatePID  ; yes                    ;
+; i[21]                                                ; state.CalculatePID  ; yes                    ;
+; p[20]                                                ; state.CalculatePID  ; yes                    ;
+; i[20]                                                ; state.CalculatePID  ; yes                    ;
+; p[19]                                                ; state.CalculatePID  ; yes                    ;
+; i[19]                                                ; state.CalculatePID  ; yes                    ;
+; p[18]                                                ; state.CalculatePID  ; yes                    ;
+; i[18]                                                ; state.CalculatePID  ; yes                    ;
+; p[17]                                                ; state.CalculatePID  ; yes                    ;
+; i[17]                                                ; state.CalculatePID  ; yes                    ;
+; p[16]                                                ; state.CalculatePID  ; yes                    ;
+; i[16]                                                ; state.CalculatePID  ; yes                    ;
+; p[15]                                                ; state.CalculatePID  ; yes                    ;
+; i[15]                                                ; state.CalculatePID  ; yes                    ;
+; p[14]                                                ; state.CalculatePID  ; yes                    ;
+; i[14]                                                ; state.CalculatePID  ; yes                    ;
+; p[13]                                                ; state.CalculatePID  ; yes                    ;
+; i[13]                                                ; state.CalculatePID  ; yes                    ;
+; p[12]                                                ; state.CalculatePID  ; yes                    ;
+; i[12]                                                ; state.CalculatePID  ; yes                    ;
+; p[11]                                                ; state.CalculatePID  ; yes                    ;
+; i[11]                                                ; state.CalculatePID  ; yes                    ;
+; p[10]                                                ; state.CalculatePID  ; yes                    ;
+; i[10]                                                ; state.CalculatePID  ; yes                    ;
+; p[9]                                                 ; state.CalculatePID  ; yes                    ;
+; i[9]                                                 ; state.CalculatePID  ; yes                    ;
+; p[8]                                                 ; state.CalculatePID  ; yes                    ;
+; i[8]                                                 ; state.CalculatePID  ; yes                    ;
+; p[7]                                                 ; state.CalculatePID  ; yes                    ;
+; i[7]                                                 ; state.CalculatePID  ; yes                    ;
+; p[6]                                                 ; state.CalculatePID  ; yes                    ;
+; i[6]                                                 ; state.CalculatePID  ; yes                    ;
+; p[5]                                                 ; state.CalculatePID  ; yes                    ;
+; i[5]                                                 ; state.CalculatePID  ; yes                    ;
+; p[4]                                                 ; state.CalculatePID  ; yes                    ;
+; i[4]                                                 ; state.CalculatePID  ; yes                    ;
+; p[3]                                                 ; state.CalculatePID  ; yes                    ;
+; i[3]                                                 ; state.CalculatePID  ; yes                    ;
+; i[2]                                                 ; state.CalculatePID  ; yes                    ;
+; p[2]                                                 ; state.CalculatePID  ; yes                    ;
+; p[1]                                                 ; state.CalculatePID  ; yes                    ;
+; i[1]                                                 ; state.CalculatePID  ; yes                    ;
+; p[0]                                                 ; state.CalculatePID  ; yes                    ;
+; i[0]                                                 ; state.CalculatePID  ; yes                    ;
+; d[30]                                                ; state.CalculatePID  ; yes                    ;
+; d[29]                                                ; state.CalculatePID  ; yes                    ;
+; d[28]                                                ; state.CalculatePID  ; yes                    ;
+; Number of user-specified and inferred latches = 220  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -463,9 +477,9 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |adc_serial_control3|pwm_n_out[0]~reg0  ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |adc_serial_control3|r_counter_clock[1] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_serial_control3|r_counter_data[0]  ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; Yes        ; |adc_serial_control3|Output[14]         ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |adc_serial_control3|r_counter_clock[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_serial_control3|r_counter_data[2]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |adc_serial_control3|Output[21]         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
@@ -484,7 +498,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4                     ;
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult5                     ;
 +------------------------------------------------+--------------+---------------------+
 ; Parameter Name                                 ; Value        ; Type                ;
 +------------------------------------------------+--------------+---------------------+
@@ -492,10 +506,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
 ; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
 ; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 17           ; Untyped             ;
+; LPM_WIDTHA                                     ; 29           ; Untyped             ;
 ; LPM_WIDTHB                                     ; 13           ; Untyped             ;
-; LPM_WIDTHP                                     ; 30           ; Untyped             ;
-; LPM_WIDTHR                                     ; 30           ; Untyped             ;
+; LPM_WIDTHP                                     ; 42           ; Untyped             ;
+; LPM_WIDTHR                                     ; 42           ; Untyped             ;
 ; LPM_WIDTHS                                     ; 1            ; Untyped             ;
 ; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
 ; LPM_PIPELINE                                   ; 0            ; Untyped             ;
@@ -510,7 +524,65 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
 ; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
 ; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_j9t     ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_p9t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 8              ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_s0p ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 7            ; Untyped             ;
+; LPM_WIDTHB                                     ; 17           ; Untyped             ;
+; LPM_WIDTHP                                     ; 24           ; Untyped             ;
+; LPM_WIDTHR                                     ; 24           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES          ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_98t     ; Untyped             ;
 ; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
 ; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
 ; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
@@ -732,14 +804,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+----------------+
 ; Name                                  ; Value          ;
 +---------------------------------------+----------------+
-; Number of entity instances            ; 5              ;
-; Entity Instance                       ; lpm_mult:Mult4 ;
-;     -- LPM_WIDTHA                     ; 17             ;
+; Number of entity instances            ; 6              ;
+; Entity Instance                       ; lpm_mult:Mult5 ;
+;     -- LPM_WIDTHA                     ; 29             ;
 ;     -- LPM_WIDTHB                     ; 13             ;
-;     -- LPM_WIDTHP                     ; 30             ;
+;     -- LPM_WIDTHP                     ; 42             ;
 ;     -- LPM_REPRESENTATION             ; SIGNED         ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO             ;
 ;     -- INPUT_B_IS_CONSTANT            ; YES            ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; lpm_mult:Mult4 ;
+;     -- LPM_WIDTHA                     ; 7              ;
+;     -- LPM_WIDTHB                     ; 17             ;
+;     -- LPM_WIDTHP                     ; 24             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; YES            ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
 ;     -- USE_EAB                        ; OFF            ;
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
@@ -797,7 +880,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 10.0 Build 218 06/27/2010 SJ Web Edition
-    Info: Processing started: Thu Jun 14 15:40:33 2018
+    Info: Processing started: Thu Jun 14 16:53:38 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off adc_serial_control -c adc_serial_control
 Info: Found 2 design units, including 1 entities, in source file adc_serial_control.vhd
     Info: Found design unit 1: adc_serial_control-rtl
@@ -818,11 +901,10 @@ Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(54):
 Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(55): used explicit default value for signal "p3" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(56): used explicit default value for signal "p4" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(72): used explicit default value for signal "Kp" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(73): used explicit default value for signal "Kd" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(74): used explicit default value for signal "Ki" because signal was never assigned a value
 Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(78): used explicit default value for signal "SetVal" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(82): used explicit default value for signal "i" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(82): used explicit default value for signal "d" because signal was never assigned a value
 Warning (10036): Verilog HDL or VHDL warning at adc_serial_control3.vhd(234): object "Output_Old" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at adc_serial_control3.vhd(235): object "Error_Old" assigned a value but never read
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(244): signal "o_adc_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(247): signal "p1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(247): signal "sAdc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -837,15 +919,22 @@ Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(256):
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(258): signal "Error" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(262): signal "Kp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(262): signal "Error" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(264): signal "Ki" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(264): signal "Error" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(265): signal "Kd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(265): signal "Error" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(266): signal "p" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(266): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(266): signal "d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "sAdc", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "sAdc2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "Error_Old", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "inter", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "Error", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "Error_History", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "p", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "i", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "d", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(233): inferring latch(es) for signal or variable "pid_sum", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "pid_sum[0]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "pid_sum[1]" at adc_serial_control3.vhd(233)
@@ -879,6 +968,70 @@ Info (10041): Inferred latch for "pid_sum[28]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "pid_sum[29]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "pid_sum[30]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "pid_sum[31]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[0]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[1]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[2]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[3]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[4]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[5]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[6]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[7]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[8]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[9]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[10]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[11]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[12]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[13]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[14]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[15]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[16]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[17]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[18]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[19]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[20]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[21]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[22]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[23]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[24]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[25]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[26]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[27]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[28]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[29]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[30]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "d[31]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[0]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[1]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[2]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[3]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[4]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[5]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[6]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[7]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[8]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[9]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[10]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[11]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[12]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[13]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[14]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[15]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[16]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[17]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[18]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[19]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[20]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[21]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[22]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[23]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[24]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[25]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[26]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[27]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[28]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[29]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[30]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "i[31]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "p[0]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "p[1]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "p[2]" at adc_serial_control3.vhd(233)
@@ -959,6 +1112,38 @@ Info (10041): Inferred latch for "inter[12]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "inter[13]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "inter[14]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "inter[15]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[0]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[1]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[2]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[3]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[4]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[5]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[6]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[7]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[8]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[9]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[10]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[11]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[12]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[13]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[14]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[15]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[16]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[17]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[18]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[19]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[20]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[21]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[22]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[23]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[24]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[25]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[26]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[27]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[28]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[29]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[30]" at adc_serial_control3.vhd(233)
+Info (10041): Inferred latch for "pid:Error_Old[31]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "sAdc2[0]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "sAdc2[1]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "sAdc2[2]" at adc_serial_control3.vhd(233)
@@ -1023,7 +1208,9 @@ Info (10041): Inferred latch for "sAdc[28]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "sAdc[29]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "sAdc[30]" at adc_serial_control3.vhd(233)
 Info (10041): Inferred latch for "sAdc[31]" at adc_serial_control3.vhd(233)
-Info: Inferred 8 megafunctions from design logic
+Info: Inferred 10 megafunctions from design logic
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult5"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3"
     Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult4"
     Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult3"
     Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2"
@@ -1032,19 +1219,53 @@ Info: Inferred 8 megafunctions from design logic
     Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1"
     Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
     Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2"
-Info: Elaborated megafunction instantiation "lpm_mult:Mult4"
-Info: Instantiated megafunction "lpm_mult:Mult4" with the following parameter:
-    Info: Parameter "LPM_WIDTHA" = "17"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult5"
+Info: Instantiated megafunction "lpm_mult:Mult5" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "29"
     Info: Parameter "LPM_WIDTHB" = "13"
-    Info: Parameter "LPM_WIDTHP" = "30"
-    Info: Parameter "LPM_WIDTHR" = "30"
+    Info: Parameter "LPM_WIDTHP" = "42"
+    Info: Parameter "LPM_WIDTHR" = "42"
     Info: Parameter "LPM_WIDTHS" = "1"
     Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
     Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info: Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info: Parameter "MAXIMIZE_SPEED" = "5"
-Info: Found 1 design units, including 1 entities, in source file db/mult_j9t.tdf
-    Info: Found entity 1: mult_j9t
+Info: Found 1 design units, including 1 entities, in source file db/mult_p9t.tdf
+    Info: Found entity 1: mult_p9t
+Info: Elaborated megafunction instantiation "lpm_divide:Div3"
+Info: Instantiated megafunction "lpm_divide:Div3" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "32"
+    Info: Parameter "LPM_WIDTHD" = "8"
+    Info: Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_s0p.tdf
+    Info: Found entity 1: lpm_divide_s0p
+Info: Found 1 design units, including 1 entities, in source file db/abs_divider_nbg.tdf
+    Info: Found entity 1: abs_divider_nbg
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_c7f.tdf
+    Info: Found entity 1: alt_u_div_c7f
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info: Found entity 1: add_sub_7pc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info: Found entity 1: add_sub_8pc
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_5v9.tdf
+    Info: Found entity 1: lpm_abs_5v9
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_i0a.tdf
+    Info: Found entity 1: lpm_abs_i0a
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4"
+Info: Instantiated megafunction "lpm_mult:Mult4" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "7"
+    Info: Parameter "LPM_WIDTHB" = "17"
+    Info: Parameter "LPM_WIDTHP" = "24"
+    Info: Parameter "LPM_WIDTHR" = "24"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Found 1 design units, including 1 entities, in source file db/mult_98t.tdf
+    Info: Found entity 1: mult_98t
 Info: Elaborated megafunction instantiation "lpm_mult:Mult3"
 Info: Instantiated megafunction "lpm_mult:Mult3" with the following parameter:
     Info: Parameter "LPM_WIDTHA" = "13"
@@ -1082,14 +1303,8 @@ Info: Found 1 design units, including 1 entities, in source file db/abs_divider_
     Info: Found entity 1: abs_divider_8dg
 Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_eaf.tdf
     Info: Found entity 1: alt_u_div_eaf
-Info: Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info: Found entity 1: add_sub_7pc
-Info: Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info: Found entity 1: add_sub_8pc
 Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_m0a.tdf
     Info: Found entity 1: lpm_abs_m0a
-Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_i0a.tdf
-    Info: Found entity 1: lpm_abs_i0a
 Info: Elaborated megafunction instantiation "lpm_divide:Div1"
 Info: Instantiated megafunction "lpm_divide:Div1" with the following parameter:
     Info: Parameter "LPM_WIDTHN" = "32"
@@ -1159,8 +1374,8 @@ Info: Instantiated megafunction "lpm_mult:Mult2" with the following parameter:
     Info: Parameter "MAXIMIZE_SPEED" = "5"
 Info: Found 1 design units, including 1 entities, in source file db/mult_vct.tdf
     Info: Found entity 1: mult_vct
-Info: Ignored 40 buffer(s)
-    Info: Ignored 40 SOFT buffer(s)
+Info: Ignored 85 buffer(s)
+    Info: Ignored 85 SOFT buffer(s)
 Warning: The following nodes have both tri-state and non-tri-state drivers
     Warning: Inserted always-enabled tri-state buffer between "o_adc_data[0]" and its non-tri-state driver.
     Warning: Inserted always-enabled tri-state buffer between "o_adc_data[1]" and its non-tri-state driver.
@@ -1204,6 +1419,35 @@ Info: One or more bidirs are fed by always enabled tri-state buffers
     Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[9]" is moved to its source
     Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[10]" is moved to its source
     Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[11]" is moved to its source
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "d[20]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[21]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[22]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[23]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[24]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[25]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[26]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[27]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[28]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[29]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "d[30]" merged with LATCH primitive "d[31]"
+    Info: Duplicate LATCH primitive "p[23]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "p[24]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "p[25]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "p[26]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "p[27]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "p[28]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "p[29]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "p[30]" merged with LATCH primitive "p[31]"
+    Info: Duplicate LATCH primitive "i[22]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[23]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[24]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[25]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[26]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[27]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[28]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[29]" merged with LATCH primitive "i[31]"
+    Info: Duplicate LATCH primitive "i[30]" merged with LATCH primitive "i[31]"
 Info: Registers with preset signals will power-up high
 Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning: TRI or OPNDRN buffers permanently enabled
@@ -1243,16 +1487,16 @@ Warning: Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ADC_DATA[13]"
     Warning (15610): No output dependent on input pin "ADC_DATA[14]"
     Warning (15610): No output dependent on input pin "ADC_DATA[15]"
-Info: Implemented 2130 device resources after synthesis - the final resource count might be different
+Info: Implemented 2802 device resources after synthesis - the final resource count might be different
     Info: Implemented 25 input pins
     Info: Implemented 9 output pins
     Info: Implemented 28 bidirectional pins
-    Info: Implemented 2058 logic cells
-    Info: Implemented 10 DSP elements
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 95 warnings
-    Info: Peak virtual memory: 357 megabytes
-    Info: Processing ended: Thu Jun 14 15:40:51 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Implemented 2726 logic cells
+    Info: Implemented 14 DSP elements
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 101 warnings
+    Info: Peak virtual memory: 366 megabytes
+    Info: Processing ended: Thu Jun 14 16:53:59 2018
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:23
 
 

@@ -3,147 +3,147 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'state.Reset'
-Slack : -59.460
-TNS   : -1883.525
-
-Type  : Slow 1200mV 85C Model Setup 'i_clk'
-Slack : -8.824
-TNS   : -222.939
-
-Type  : Slow 1200mV 85C Model Setup 'state.CalculateNewError'
-Slack : -7.602
-TNS   : -121.236
+Slack : -59.614
+TNS   : -1893.061
 
 Type  : Slow 1200mV 85C Model Setup 'state.CalculatePID'
-Slack : -1.455
-TNS   : -29.960
+Slack : -57.328
+TNS   : -1686.810
+
+Type  : Slow 1200mV 85C Model Setup 'i_clk'
+Slack : -9.264
+TNS   : -237.991
+
+Type  : Slow 1200mV 85C Model Setup 'state.CalculateNewError'
+Slack : -7.472
+TNS   : -117.897
 
 Type  : Slow 1200mV 85C Model Hold 'i_clk'
-Slack : -0.064
-TNS   : -0.127
-
-Type  : Slow 1200mV 85C Model Hold 'state.CalculatePID'
-Slack : 0.138
-TNS   : 0.000
+Slack : -0.105
+TNS   : -0.122
 
 Type  : Slow 1200mV 85C Model Hold 'state.CalculateNewError'
-Slack : 0.337
+Slack : 0.156
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'state.Reset'
-Slack : 0.370
+Slack : 0.233
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'state.CalculatePID'
+Slack : 1.377
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'i_clk'
 Slack : -3.000
 TNS   : -110.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.CalculatePID'
-Slack : 0.351
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.Reset'
+Slack : 0.413
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.CalculateNewError'
-Slack : 0.437
+Slack : 0.417
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.Reset'
-Slack : 0.442
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.CalculatePID'
+Slack : 0.432
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'state.Reset'
-Slack : -52.886
-TNS   : -1674.311
-
-Type  : Slow 1200mV 0C Model Setup 'i_clk'
-Slack : -7.732
-TNS   : -190.487
-
-Type  : Slow 1200mV 0C Model Setup 'state.CalculateNewError'
-Slack : -6.731
-TNS   : -106.281
+Slack : -53.036
+TNS   : -1682.665
 
 Type  : Slow 1200mV 0C Model Setup 'state.CalculatePID'
-Slack : -1.176
-TNS   : -22.636
+Slack : -51.139
+TNS   : -1497.155
+
+Type  : Slow 1200mV 0C Model Setup 'i_clk'
+Slack : -8.083
+TNS   : -202.704
+
+Type  : Slow 1200mV 0C Model Setup 'state.CalculateNewError'
+Slack : -6.567
+TNS   : -101.975
 
 Type  : Slow 1200mV 0C Model Hold 'i_clk'
-Slack : -0.071
-TNS   : -0.111
-
-Type  : Slow 1200mV 0C Model Hold 'state.CalculatePID'
-Slack : 0.095
-TNS   : 0.000
+Slack : -0.123
+TNS   : -0.128
 
 Type  : Slow 1200mV 0C Model Hold 'state.CalculateNewError'
-Slack : 0.304
+Slack : 0.137
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'state.Reset'
-Slack : 0.374
+Slack : 0.253
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'state.CalculatePID'
+Slack : 1.246
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'i_clk'
 Slack : -3.000
 TNS   : -110.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.CalculatePID'
-Slack : 0.391
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.Reset'
+Slack : 0.439
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.CalculateNewError'
-Slack : 0.461
+Slack : 0.441
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.Reset'
-Slack : 0.469
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.CalculatePID'
+Slack : 0.471
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'state.Reset'
-Slack : -33.715
-TNS   : -1061.933
-
-Type  : Fast 1200mV 0C Model Setup 'i_clk'
-Slack : -4.517
-TNS   : -92.021
-
-Type  : Fast 1200mV 0C Model Setup 'state.CalculateNewError'
-Slack : -4.101
-TNS   : -61.123
+Slack : -33.518
+TNS   : -1057.074
 
 Type  : Fast 1200mV 0C Model Setup 'state.CalculatePID'
-Slack : -0.367
-TNS   : -4.316
+Slack : -32.305
+TNS   : -923.638
+
+Type  : Fast 1200mV 0C Model Setup 'i_clk'
+Slack : -4.790
+TNS   : -99.862
+
+Type  : Fast 1200mV 0C Model Setup 'state.CalculateNewError'
+Slack : -4.051
+TNS   : -60.496
 
 Type  : Fast 1200mV 0C Model Hold 'i_clk'
-Slack : -0.077
-TNS   : -0.152
-
-Type  : Fast 1200mV 0C Model Hold 'state.CalculatePID'
-Slack : -0.062
-TNS   : -0.166
+Slack : -0.104
+TNS   : -0.113
 
 Type  : Fast 1200mV 0C Model Hold 'state.CalculateNewError'
-Slack : 0.155
+Slack : 0.062
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'state.Reset'
-Slack : 0.194
+Slack : 0.106
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'state.CalculatePID'
+Slack : 0.715
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'i_clk'
 Slack : -3.000
-TNS   : -212.052
+TNS   : -212.154
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state.CalculatePID'
-Slack : 0.315
+Slack : 0.400
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state.CalculateNewError'
-Slack : 0.418
+Slack : 0.405
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state.Reset'
-Slack : 0.427
+Slack : 0.405
 TNS   : 0.000
 
 ------------------------------------------------------------

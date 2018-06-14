@@ -69,13 +69,13 @@ signal r_adc_data                 : std_logic_vector(11 downto 0); -- adc parall
 
 
 signal state,next_state : statetypes := Reset;     
-signal Kp : integer :=10;		--proportional constant
-signal Kd : integer :=0;		--differential constant
-signal Ki : integer :=0;		--integral constant
+signal Kp : integer :=35;		--proportional constant
+signal Kd : integer :=5;		--differential constant
+signal Ki : integer :=15;		--integral constant
 signal pid_sum : integer := 1;	--intermediate output
 signal Output : integer := 1;	--intermediate output
 signal inter: integer := 0;		--intermediate signal
-signal SetVal : integer := 40;  	--set point, this is what the PID loo tries to achieve
+signal SetVal : integer := 20;  	--set point, this is what the PID loo tries to achieve
 signal sAdc : integer := 0 ;	--stores the integer converted value of the ADC input
 signal sAdc2 : integer := 0 ;	--stores the integer converted value of the ADC input
 signal Error: integer := 0;		--Stores the deviation of the input from the set point
@@ -261,8 +261,8 @@ process p_counter_clock;
 			next_state <= DivideKg;
 			p <= Kp*(Error);              --Calculate PID 
 	--		i <= Ki*(Error_History)/10;
-			--i <= Ki*(Error+Error_Old)/10;
-			--d <= Kd *(Error-Error_Old);                     
+			i <= Ki*(Error+Error_Old)/100;
+			d <= Kd *(Error-Error_Old);                     
 				pid_sum <= (p+i+d);
 		  when DivideKg =>
 			next_state <= SOverload;
