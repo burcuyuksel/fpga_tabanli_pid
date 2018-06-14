@@ -69,33 +69,33 @@ CHIP  "adc_serial_control"  ASSIGNED TO AN: EP4CE22F17C6
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
-ADC_DATA[7]                  : A2        : input  : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A2        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
+DAC_DATA[11]                 : A4        : bidir  : 2.5 V             :         : 8         : N              
+DAC_DATA[0]                  : A5        : bidir  : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8         :                
+ADC_DATA[7]                  : A7        : input  : 2.5 V             :         : 8         : N              
 GND+                         : A8        :        :                   :         : 8         :                
 i_miso                       : A9        : input  : 2.5 V             :         : 7         : Y              
 o_ss                         : A10       : output : 2.5 V             :         : 7         : Y              
 o_adc_data[7]                : A11       : bidir  : 2.5 V             :         : 7         : Y              
 pwm_out[0]                   : A12       : output : 2.5 V             :         : 7         : Y              
 o_adc_data[5]                : A13       : bidir  : 2.5 V             :         : 7         : Y              
-ADC_DATA[15]                 : A14       : input  : 2.5 V             :         : 7         : N              
+o_adc_ch[1]                  : A14       : output : 2.5 V             :         : 7         : N              
 o_adc_data[4]                : A15       : bidir  : 2.5 V             :         : 7         : Y              
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
 o_adc_data[10]               : B1        : bidir  : 2.5 V             :         : 1         : Y              
 GND                          : B2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
-ADC_DATA[6]                  : B5        : input  : 2.5 V             :         : 8         : N              
-ADC_DATA[4]                  : B6        : input  : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8         :                
 GND+                         : B8        :        :                   :         : 8         :                
 i_adc_ch[2]                  : B9        : input  : 2.5 V             :         : 7         : Y              
 o_mosi                       : B10       : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B11       :        :                   :         : 7         :                
-DAC_DATA[1]                  : B12       : bidir  : 2.5 V             :         : 7         : N              
+o_adc_data[2]                : B11       : bidir  : 2.5 V             :         : 7         : N              
+ADC_DATA[12]                 : B12       : input  : 2.5 V             :         : 7         : N              
 o_adc_data[6]                : B13       : bidir  : 2.5 V             :         : 7         : Y              
 o_sclk                       : B14       : output : 2.5 V             :         : 7         : Y              
 GND                          : B15       : gnd    :                   :         :           :                
@@ -108,39 +108,39 @@ GND                          : C5        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
 VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8         :                
-o_adc_ch[1]                  : C9        : output : 2.5 V             :         : 7         : N              
+ADC_DATA[4]                  : C9        : input  : 2.5 V             :         : 7         : N              
 VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C11       :        :                   :         : 7         :                
+o_adc_ch[2]                  : C11       : output : 2.5 V             :         : 7         : N              
 GND                          : C12       : gnd    :                   :         :           :                
 VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 7         :                
-pwm_n_out[0]                 : C15       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 6         :                
 o_adc_data[8]                : D1        : bidir  : 2.5 V             :         : 1         : Y              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
-ADC_DATA[13]                 : D3        : input  : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 8         :                
 VCCD_PLL3                    : D4        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
 GND                          : D7        : gnd    :                   :         :           :                
-DAC_DATA[9]                  : D8        : bidir  : 2.5 V             :         : 8         : N              
-o_adc_ch[0]                  : D9        : output : 2.5 V             :         : 7         : N              
+DAC_DATA[10]                 : D8        : bidir  : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 7         :                
 GND                          : D10       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D11       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 7         :                
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
-ADC_DATA[12]                 : D14       : input  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 6         :                
-o_adc_ch[2]                  : D16       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :         : 6         :                
 reset_n                      : E1        : input  : 2.5 V             :         : 1         : Y              
 GND                          : E2        : gnd    :                   :         :           :                
 VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
 GND                          : E4        : gnd    :                   :         :           :                
 GNDA3                        : E5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
+DAC_DATA[1]                  : E6        : bidir  : 2.5 V             :         : 8         : N              
+DAC_DATA[12]                 : E7        : bidir  : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8         :                
-DAC_DATA[4]                  : E9        : bidir  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 7         :                
 ADC_DATA[14]                 : E11       : input  : 2.5 V             :         : 7         : N              
 GNDA2                        : E12       : gnd    :                   :         :           :                
@@ -148,7 +148,7 @@ GND                          : E13       : gnd    :                   :         
 VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
 GND+                         : E15       :        :                   :         : 6         :                
 GND+                         : E16       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1         :                
+DAC_DATA[15]                 : F1        : bidir  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F2        :        :                   :         : 1         :                
 o_adc_data[9]                : F3        : bidir  : 2.5 V             :         : 1         : Y              
 nSTATUS                      : F4        :        :                   :         : 1         :                
@@ -156,11 +156,11 @@ VCCA3                        : F5        : power  :                   : 2.5V    
 GND                          : F6        : gnd    :                   :         :           :                
 VCCINT                       : F7        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
-DAC_DATA[11]                 : F9        : bidir  : 2.5 V             :         : 7         : N              
+ADC_DATA[9]                  : F9        : input  : 2.5 V             :         : 7         : N              
 GND                          : F10       : gnd    :                   :         :           :                
 VCCINT                       : F11       : power  :                   : 1.2V    :           :                
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
-ADC_DATA[9]                  : F13       : input  : 2.5 V             :         : 6         : N              
+ADC_DATA[11]                 : F13       : input  : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 6         :                
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 2.5 V             :         : 6         : N              
@@ -168,7 +168,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : G2        :        :                   :         : 1         :                
 VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
 GND                          : G4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
+ADC_DATA[15]                 : G5        : input  : 2.5 V             :         : 1         : N              
 VCCINT                       : G6        : power  :                   : 1.2V    :           :                
 VCCINT                       : G7        : power  :                   : 1.2V    :           :                
 VCCINT                       : G8        : power  :                   : 1.2V    :           :                
@@ -178,7 +178,7 @@ GND                          : G11       : gnd    :                   :         
 MSEL2                        : G12       :        :                   :         : 6         :                
 GND                          : G13       : gnd    :                   :         :           :                
 VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 6         :                
+DAC_DATA[14]                 : G15       : bidir  : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 6         :                
 ~ALTERA_DCLK~                : H1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V             :         : 1         : N              
@@ -228,32 +228,32 @@ GND                          : K13       : gnd    :                   :         
 VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 5         :                
-DAC_DATA[8]                  : L1        : bidir  : 2.5 V             :         : 2         : N              
-DAC_DATA[3]                  : L2        : bidir  : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 2         :                
 o_adc_data[11]               : L3        : bidir  : 2.5 V             :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 2         :                
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
 VCCINT                       : L6        : power  :                   : 1.2V    :           :                
-DAC_DATA[0]                  : L7        : bidir  : 2.5 V             :         : 3         : N              
-DAC_DATA[12]                 : L8        : bidir  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 3         :                
 GND                          : L9        : gnd    :                   :         :           :                
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
 VCCA4                        : L12       : power  :                   : 2.5V    :           :                
-DAC_DATA[14]                 : L13       : bidir  : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L13       :        :                   :         : 5         :                
 DAC_DATA[13]                 : L14       : bidir  : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L15       :        :                   :         : 5         :                
-ADC_DATA[11]                 : L16       : input  : 2.5 V             :         : 5         : N              
+DAC_DATA[8]                  : L15       : bidir  : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L16       :        :                   :         : 5         :                
 i_adc_ch[0]                  : M1        : input  : 2.5 V             :         : 2         : Y              
 GND+                         : M2        :        :                   :         : 2         :                
 VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 3         :                
+pwm_n_out[0]                 : M6        : output : 2.5 V             :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 3         :                
-DAC_DATA[7]                  : M8        : bidir  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 3         :                
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
-ADC_DATA[3]                  : M10       : input  : 2.5 V             :         : 4         : N              
+o_adc_ch[0]                  : M10       : output : 2.5 V             :         : 4         : N              
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
 GNDA4                        : M12       : gnd    :                   :         :           :                
 GND                          : M13       : gnd    :                   :         :           :                
@@ -261,66 +261,66 @@ VCCIO5                       : M14       : power  :                   : 2.5V    
 i_conv_ena                   : M15       : input  : 2.5 V             :         : 5         : Y              
 GND+                         : M16       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N1        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
+DAC_DATA[3]                  : N2        : bidir  : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 3         :                
 VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 3         :                
 GND                          : N7        : gnd    :                   :         :           :                
-DAC_DATA[10]                 : N8        : bidir  : 2.5 V             :         : 3         : N              
-DAC_DATA[2]                  : N9        : bidir  : 2.5 V             :         : 4         : N              
+DAC_DATA[6]                  : N8        : bidir  : 2.5 V             :         : 3         : N              
+ADC_DATA[2]                  : N9        : input  : 2.5 V             :         : 4         : N              
 GND                          : N10       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N11       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 4         :                
+o_adc_data_valid             : N11       : output : 2.5 V             :         : 4         : N              
+ADC_DATA[3]                  : N12       : input  : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : N13       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N14       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 5         :                
+DAC_DATA[5]                  : N16       : bidir  : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : P1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P3        :        :                   :         : 3         :                
+ADC_DATA[13]                 : P3        : input  : 2.5 V             :         : 3         : N              
 VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
 GND                          : P5        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 3         :                
 VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
-DAC_DATA[6]                  : P8        : bidir  : 2.5 V             :         : 3         : N              
-o_adc_data_valid             : P9        : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P8        :        :                   :         : 3         :                
+DAC_DATA[9]                  : P9        : bidir  : 2.5 V             :         : 4         : N              
 VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P11       :        :                   :         : 4         :                
+o_adc_data[3]                : P11       : bidir  : 2.5 V             :         : 4         : N              
 GND                          : P12       : gnd    :                   :         :           :                
 VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
 ADC_DATA[5]                  : P14       : input  : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
+ADC_DATA[6]                  : P15       : input  : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : P16       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R1        :        :                   :         : 2         :                
+ADC_DATA[8]                  : R1        : input  : 2.5 V             :         : 2         : N              
 GND                          : R2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 3         :                
-DAC_DATA[15]                 : R7        : bidir  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 3         :                
 i_clk                        : R8        : input  : 2.5 V             :         : 3         : Y              
 ADC_DATA[0]                  : R9        : input  : 2.5 V             :         : 4         : N              
-o_adc_data[3]                : R10       : bidir  : 2.5 V             :         : 4         : N              
+DAC_DATA[2]                  : R10       : bidir  : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R11       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 4         :                
-o_adc_data[1]                : R13       : bidir  : 2.5 V             :         : 4         : N              
+o_adc_data[0]                : R13       : bidir  : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4         :                
 GND                          : R15       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R16       :        :                   :         : 5         :                
 VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
-ADC_DATA[8]                  : T2        : input  : 2.5 V             :         : 3         : N              
-ADC_DATA[2]                  : T3        : input  : 2.5 V             :         : 3         : N              
+DAC_DATA[7]                  : T2        : bidir  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T6        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 3         :                
+DAC_DATA[4]                  : T7        : bidir  : 2.5 V             :         : 3         : N              
 i_adc_ch[1]                  : T8        : input  : 2.5 V             :         : 3         : Y              
 ADC_DATA[1]                  : T9        : input  : 2.5 V             :         : 4         : N              
-DAC_DATA[5]                  : T10       : bidir  : 2.5 V             :         : 4         : N              
-o_adc_data[0]                : T11       : bidir  : 2.5 V             :         : 4         : N              
+ADC_DATA[10]                 : T10       : input  : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4         :                
-o_adc_data[2]                : T13       : bidir  : 2.5 V             :         : 4         : N              
+o_adc_data[1]                : T13       : bidir  : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : T14       :        :                   :         : 4         :                
-ADC_DATA[10]                 : T15       : input  : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T15       :        :                   :         : 4         :                
 VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

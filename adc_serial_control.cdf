@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE22F17) Path("C:/Users/hp/Desktop/Quartus/adcserial/") File("adc_serial_control.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE22F17) Path("C:/Users/hp/Desktop/GitHub_Repos/fpga_tabanli_pid/") File("adc_serial_control.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

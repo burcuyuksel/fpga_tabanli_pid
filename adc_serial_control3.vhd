@@ -69,12 +69,13 @@ signal r_adc_data                 : std_logic_vector(11 downto 0); -- adc parall
 
 
 signal state,next_state : statetypes := Reset;     
-signal Kp : integer := 100;		--proportional constant
-signal Kd : integer :=20;		--differential constant
-signal Ki : integer :=1;		--integral constant
+signal Kp : integer :=10;		--proportional constant
+signal Kd : integer :=0;		--differential constant
+signal Ki : integer :=0;		--integral constant
+signal pid_sum : integer := 1;	--intermediate output
 signal Output : integer := 1;	--intermediate output
 signal inter: integer := 0;		--intermediate signal
-signal SetVal : integer := 90;  	--set point, this is what the PID loo tries to achieve
+signal SetVal : integer := 40;  	--set point, this is what the PID loo tries to achieve
 signal sAdc : integer := 0 ;	--stores the integer converted value of the ADC input
 signal sAdc2 : integer := 0 ;	--stores the integer converted value of the ADC input
 signal Error: integer := 0;		--Stores the deviation of the input from the set point
@@ -226,7 +227,9 @@ begin
       r_sclk_fall                <= '0';
     end if;
   end if;
-end process p_counter_clock;
+end
+
+process p_counter_clock;
   pid : PROCESS(i_clk,state)		--sensitive to Clock and current state
       variable Output_Old : integer := 0;   
       variable Error_Old : integer := 0;
@@ -236,7 +239,7 @@ end process p_counter_clock;
          IF i_clk'EVENT AND i_clk='1' THEN  
 				state <= next_state;
          END IF;
-         case state is
+	case state is
 		 when Reset =>
 			sAdc <= to_integer(unsigned(o_adc_data));  --Get the input for PID
 	-- 	sAdc2 <= (a/100)*(sAdc**(b))-(c/100);
@@ -258,31 +261,25 @@ end process p_counter_clock;
 			next_state <= DivideKg;
 			p <= Kp*(Error);              --Calculate PID 
 	--		i <= Ki*(Error_History)/10;
-			i <= Ki*(Error+Error_Old)/10;
-			d <= Kd *(Error-Error_Old);                     
-				
+			--i <= Ki*(Error+Error_Old)/10;
+			--d <= Kd *(Error-Error_Old);                     
+				pid_sum <= (p+i+d);
 		  when DivideKg =>
 			next_state <= SOverload;
-			Output <= (p+i+d)/64; --Calculate new output (/2048 to scale the output correctly)
+	--		Output <= (p+i+d); --Calculate new output (/2048 to scale the output correctly)
 		   
 		  when SOverload =>
 			next_state <= ConvDac;	--done to keep output within 16 bit range
 	--    	Output <= Output/256;
---	if Output > 4095 then
-	--			 Output <= 4095 ;
-	--		end if;     
-	--		if Output < 1 then 
-	--			 Output <= 1;
-   --   	end if;
 
 	
 		  when ConvDac =>        		--Send the output to port
-			DacDataCarrier <= std_logic_vector(to_unsigned(Output ,16));
+--			DacDataCarrier <= std_logic_vector(to_unsigned(Output ,16));
 			next_state <=Write2DAC;
 			
 		  when Write2DAC =>				--send output to the DAC
 			next_state <= Reset;
-			DAC_DATA <= DacDataCarrier;
+--			DAC_DATA <= DacDataCarrier;
 	 end case;
 
                         
@@ -295,6 +292,14 @@ END PROCESS pid;	--end of process
       pwm_n_out <= (OTHERS => '0');                                          --clear pwm inverse outputs
     ELSIF(i_clk'EVENT AND i_clk = '1') THEN                                      --rising system clock edge
       IF(ena = '1') THEN                                                   --latch in new duty cycle
+			if pid_sum > 4095 then
+				 Output <= 4095;
+			else
+				 Output <= pid_sum;
+			end if;     
+			if pid_sum < 1 then 
+				 Output <= 1;
+       	end if;
         half_duty_new <= Output*period/(2**bits_resolution)/2;   --determine clocks in 1/2 duty cycle
       END IF;
       FOR i IN 0 to phases-1 LOOP                                            --create a counter for each phase
