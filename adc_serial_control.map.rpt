@@ -1,0 +1,1339 @@
+Analysis & Synthesis report for adc_serial_control
+Thu Jun 14 09:20:05 2018
+Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |adc_serial_control3|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |adc_serial_control3
+ 17. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4
+ 18. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 21. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 22. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 24. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2
+ 25. lpm_mult Parameter Settings by Entity Instance
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jun 14 09:20:05 2018    ;
+; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
+; Revision Name                      ; adc_serial_control                       ;
+; Top-level Entity Name              ; adc_serial_control3                      ;
+; Family                             ; Cyclone IV E                             ;
+; Total logic elements               ; 1,990                                    ;
+;     Total combinational functions  ; 1,974                                    ;
+;     Dedicated logic registers      ; 73                                       ;
+; Total registers                    ; 73                                       ;
+; Total pins                         ; 62                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 8                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                         ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                                     ; Setting             ; Default Value      ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6        ;                    ;
+; Top-level entity name                                                      ; adc_serial_control3 ; adc_serial_control ;
+; Family name                                                                ; Cyclone IV E        ; Stratix II         ;
+; Use smart compilation                                                      ; Off                 ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                 ;
+; Enable compact report table                                                ; Off                 ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                ;
+; Preserve fewer node names                                                  ; On                  ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                 ; Off                ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                ; Auto               ;
+; Safe State Machine                                                         ; Off                 ; Off                ;
+; Extract Verilog State Machines                                             ; On                  ; On                 ;
+; Extract VHDL State Machines                                                ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                 ;
+; Parallel Synthesis                                                         ; On                  ; On                 ;
+; DSP Block Balancing                                                        ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                  ; On                 ;
+; Power-Up Don't Care                                                        ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                ;
+; Remove Duplicate Registers                                                 ; On                  ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                ;
+; Optimization Technique                                                     ; Balanced            ; Balanced           ;
+; Carry Chain Length                                                         ; 70                  ; 70                 ;
+; Auto Carry Chains                                                          ; On                  ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                ;
+; Auto ROM Replacement                                                       ; On                  ; On                 ;
+; Auto RAM Replacement                                                       ; On                  ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                  ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                 ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                  ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                  ; On                 ;
+; Report Parameter Settings                                                  ; On                  ; On                 ;
+; Report Source Assignments                                                  ; On                  ; On                 ;
+; Report Connectivity Checks                                                 ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                          ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                ;
+; Clock MUX Protection                                                       ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                ;
+; Block Design Naming                                                        ; Auto                ; Auto               ;
+; SDC constraint protection                                                  ; Off                 ; Off                ;
+; Synthesis Effort                                                           ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                 ;
+; Synthesis Seed                                                             ; 1                   ; 1                  ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; adc_serial_control3.vhd          ; yes             ; User VHDL File               ; C:/Users/hp/Desktop/Quartus/adcserial/adc_serial_control3.vhd  ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_mult.tdf    ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/multcore.tdf    ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/mpar_add.tdf    ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_add_sub.tdf ;
+; db/add_sub_dkh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_dkh.tdf       ;
+; db/add_sub_i9h.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_i9h.tdf       ;
+; db/add_sub_gkh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_gkh.tdf       ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/altshift.tdf    ;
+; db/add_sub_hkh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_hkh.tdf       ;
+; db/add_sub_n9h.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_n9h.tdf       ;
+; db/add_sub_ckh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_ckh.tdf       ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_divide.tdf  ;
+; db/lpm_divide_d2p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/lpm_divide_d2p.tdf    ;
+; db/abs_divider_8dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/abs_divider_8dg.tdf   ;
+; db/alt_u_div_eaf.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/alt_u_div_eaf.tdf     ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_7pc.tdf       ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/add_sub_8pc.tdf       ;
+; db/lpm_abs_m0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/lpm_abs_m0a.tdf       ;
+; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/lpm_abs_i0a.tdf       ;
+; db/lpm_divide_72p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/lpm_divide_72p.tdf    ;
+; db/abs_divider_2dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/abs_divider_2dg.tdf   ;
+; db/alt_u_div_2af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/alt_u_div_2af.tdf     ;
+; db/lpm_abs_g0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/lpm_abs_g0a.tdf       ;
+; db/mult_5dt.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/mult_5dt.tdf          ;
+; db/mult_bdt.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/mult_bdt.tdf          ;
+; db/lpm_divide_82p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/lpm_divide_82p.tdf    ;
+; db/abs_divider_3dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/abs_divider_3dg.tdf   ;
+; db/alt_u_div_4af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/alt_u_div_4af.tdf     ;
+; db/lpm_abs_h0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/lpm_abs_h0a.tdf       ;
+; db/mult_vct.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/hp/Desktop/Quartus/adcserial/db/mult_vct.tdf          ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 1,990       ;
+;                                             ;             ;
+; Total combinational functions               ; 1974        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 391         ;
+;     -- 3 input functions                    ; 769         ;
+;     -- <=2 input functions                  ; 814         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 1205        ;
+;     -- arithmetic mode                      ; 769         ;
+;                                             ;             ;
+; Total registers                             ; 73          ;
+;     -- Dedicated logic registers            ; 73          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 62          ;
+; Embedded Multiplier 9-bit elements          ; 8           ;
+; Maximum fan-out node                        ; i_clk~input ;
+; Maximum fan-out                             ; 73          ;
+; Total fan-out                               ; 5821        ;
+; Average fan-out                             ; 2.63        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                  ;
++------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Library Name ;
++------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |adc_serial_control3                           ; 1974 (409)        ; 73 (73)      ; 0           ; 0          ; 8            ; 0       ; 4         ; 62   ; 0            ; |adc_serial_control3                                                                                                                        ;              ;
+;    |lpm_divide:Div0|                           ; 202 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0                                                                                                        ;              ;
+;       |lpm_divide_82p:auto_generated|          ; 202 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0|lpm_divide_82p:auto_generated                                                                          ;              ;
+;          |abs_divider_3dg:divider|             ; 202 (10)          ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0|lpm_divide_82p:auto_generated|abs_divider_3dg:divider                                                  ;              ;
+;             |alt_u_div_4af:divider|            ; 162 (162)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0|lpm_divide_82p:auto_generated|abs_divider_3dg:divider|alt_u_div_4af:divider                            ;              ;
+;             |lpm_abs_i0a:my_abs_num|           ; 30 (30)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div0|lpm_divide_82p:auto_generated|abs_divider_3dg:divider|lpm_abs_i0a:my_abs_num                           ;              ;
+;    |lpm_divide:Div1|                           ; 712 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div1                                                                                                        ;              ;
+;       |lpm_divide_72p:auto_generated|          ; 712 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div1|lpm_divide_72p:auto_generated                                                                          ;              ;
+;          |abs_divider_2dg:divider|             ; 712 (30)          ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div1|lpm_divide_72p:auto_generated|abs_divider_2dg:divider                                                  ;              ;
+;             |alt_u_div_2af:divider|            ; 652 (652)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div1|lpm_divide_72p:auto_generated|abs_divider_2dg:divider|alt_u_div_2af:divider                            ;              ;
+;             |lpm_abs_i0a:my_abs_num|           ; 30 (30)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div1|lpm_divide_72p:auto_generated|abs_divider_2dg:divider|lpm_abs_i0a:my_abs_num                           ;              ;
+;    |lpm_divide:Div2|                           ; 540 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2                                                                                                        ;              ;
+;       |lpm_divide_d2p:auto_generated|          ; 540 (0)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2|lpm_divide_d2p:auto_generated                                                                          ;              ;
+;          |abs_divider_8dg:divider|             ; 540 (36)          ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider                                                  ;              ;
+;             |alt_u_div_eaf:divider|            ; 479 (479)         ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|alt_u_div_eaf:divider                            ;              ;
+;             |lpm_abs_i0a:my_abs_num|           ; 25 (25)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|lpm_abs_i0a:my_abs_num                           ;              ;
+;    |lpm_mult:Mult0|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult0                                                                                                         ;              ;
+;       |mult_5dt:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult0|mult_5dt:auto_generated                                                                                 ;              ;
+;    |lpm_mult:Mult1|                            ; 14 (0)            ; 0 (0)        ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult1                                                                                                         ;              ;
+;       |mult_bdt:auto_generated|                ; 14 (14)           ; 0 (0)        ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult1|mult_bdt:auto_generated                                                                                 ;              ;
+;    |lpm_mult:Mult2|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult2                                                                                                         ;              ;
+;       |mult_vct:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult2|mult_vct:auto_generated                                                                                 ;              ;
+;    |lpm_mult:Mult3|                            ; 64 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3                                                                                                         ;              ;
+;       |multcore:mult_core|                     ; 64 (33)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core                                                                                      ;              ;
+;          |mpar_add:padder|                     ; 31 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder                                                                      ;              ;
+;             |lpm_add_sub:adder[0]|             ; 15 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ;              ;
+;                |add_sub_n9h:auto_generated|    ; 15 (15)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_n9h:auto_generated                      ;              ;
+;             |mpar_add:sub_par_add|             ; 16 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ;              ;
+;                |lpm_add_sub:adder[0]|          ; 16 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ;              ;
+;                   |add_sub_ckh:auto_generated| ; 16 (16)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_ckh:auto_generated ;              ;
+;    |lpm_mult:Mult4|                            ; 33 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4                                                                                                         ;              ;
+;       |multcore:mult_core|                     ; 33 (15)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core                                                                                      ;              ;
+;          |mpar_add:padder|                     ; 18 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder                                                                      ;              ;
+;             |lpm_add_sub:adder[0]|             ; 10 (0)            ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ;              ;
+;                |add_sub_i9h:auto_generated|    ; 10 (10)           ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_i9h:auto_generated                      ;              ;
+;             |lpm_add_sub:adder[1]|             ; 2 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                                                 ;              ;
+;                |add_sub_dkh:auto_generated|    ; 2 (2)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_dkh:auto_generated                      ;              ;
+;             |mpar_add:sub_par_add|             ; 6 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ;              ;
+;                |lpm_add_sub:adder[0]|          ; 6 (0)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ;              ;
+;                   |add_sub_gkh:auto_generated| ; 6 (6)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_serial_control3|lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_gkh:auto_generated ;              ;
++------------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 4           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 8           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 4           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |adc_serial_control3|state                                                                                                                ;
++-------------------------+---------------+-----------------+-----------------+----------------+--------------------+-------------------------+-------------+
+; Name                    ; state.ConvDac ; state.SOverload ; state.Write2DAC ; state.DivideKg ; state.CalculatePID ; state.CalculateNewError ; state.Reset ;
++-------------------------+---------------+-----------------+-----------------+----------------+--------------------+-------------------------+-------------+
+; state.Reset             ; 0             ; 0               ; 0               ; 0              ; 0                  ; 0                       ; 0           ;
+; state.CalculateNewError ; 0             ; 0               ; 0               ; 0              ; 0                  ; 1                       ; 1           ;
+; state.CalculatePID      ; 0             ; 0               ; 0               ; 0              ; 1                  ; 0                       ; 1           ;
+; state.DivideKg          ; 0             ; 0               ; 0               ; 1              ; 0                  ; 0                       ; 1           ;
+; state.Write2DAC         ; 0             ; 0               ; 1               ; 0              ; 0                  ; 0                       ; 1           ;
+; state.SOverload         ; 0             ; 1               ; 0               ; 0              ; 0                  ; 0                       ; 1           ;
+; state.ConvDac           ; 1             ; 0               ; 0               ; 0              ; 0                  ; 0                       ; 1           ;
++-------------------------+---------------+-----------------+-----------------+----------------+--------------------+-------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++------------------------------------------------------+-------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal     ; Free of Timing Hazards ;
++------------------------------------------------------+-------------------------+------------------------+
+; DAC_DATA[2]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[3]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[4]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[5]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[6]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[7]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[8]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[9]$latch                                    ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[10]$latch                                   ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[11]$latch                                   ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[12]$latch                                   ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[13]$latch                                   ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[14]$latch                                   ; state.Write2DAC         ; yes                    ;
+; DAC_DATA[15]$latch                                   ; state.Write2DAC         ; yes                    ;
+; DacDataCarrier[2]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[3]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[4]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[5]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[6]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[7]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[8]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[9]                                    ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[10]                                   ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[11]                                   ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[12]                                   ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[13]                                   ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[14]                                   ; state.ConvDac           ; yes                    ;
+; DacDataCarrier[15]                                   ; state.ConvDac           ; yes                    ;
+; Output[2]                                            ; state.DivideKg          ; yes                    ;
+; Output[3]                                            ; state.DivideKg          ; yes                    ;
+; Output[4]                                            ; state.DivideKg          ; yes                    ;
+; Output[5]                                            ; state.DivideKg          ; yes                    ;
+; Output[6]                                            ; state.DivideKg          ; yes                    ;
+; Output[7]                                            ; state.DivideKg          ; yes                    ;
+; Output[8]                                            ; state.DivideKg          ; yes                    ;
+; Output[9]                                            ; state.DivideKg          ; yes                    ;
+; Output[10]                                           ; state.DivideKg          ; yes                    ;
+; Output[11]                                           ; state.DivideKg          ; yes                    ;
+; Output[12]                                           ; state.DivideKg          ; yes                    ;
+; Output[13]                                           ; state.DivideKg          ; yes                    ;
+; Output[14]                                           ; state.DivideKg          ; yes                    ;
+; Output[15]                                           ; state.DivideKg          ; yes                    ;
+; p[2]                                                 ; state.CalculatePID      ; yes                    ;
+; p[3]                                                 ; state.CalculatePID      ; yes                    ;
+; p[4]                                                 ; state.CalculatePID      ; yes                    ;
+; p[5]                                                 ; state.CalculatePID      ; yes                    ;
+; p[6]                                                 ; state.CalculatePID      ; yes                    ;
+; p[7]                                                 ; state.CalculatePID      ; yes                    ;
+; p[8]                                                 ; state.CalculatePID      ; yes                    ;
+; p[9]                                                 ; state.CalculatePID      ; yes                    ;
+; p[10]                                                ; state.CalculatePID      ; yes                    ;
+; p[11]                                                ; state.CalculatePID      ; yes                    ;
+; p[12]                                                ; state.CalculatePID      ; yes                    ;
+; p[13]                                                ; state.CalculatePID      ; yes                    ;
+; p[14]                                                ; state.CalculatePID      ; yes                    ;
+; p[15]                                                ; state.CalculatePID      ; yes                    ;
+; Error[0]                                             ; state.CalculateNewError ; yes                    ;
+; Error[1]                                             ; state.CalculateNewError ; yes                    ;
+; Error[2]                                             ; state.CalculateNewError ; yes                    ;
+; Error[3]                                             ; state.CalculateNewError ; yes                    ;
+; inter[0]                                             ; state.CalculateNewError ; yes                    ;
+; inter[1]                                             ; state.CalculateNewError ; yes                    ;
+; inter[2]                                             ; state.CalculateNewError ; yes                    ;
+; inter[3]                                             ; state.CalculateNewError ; yes                    ;
+; Error[7]                                             ; state.CalculateNewError ; yes                    ;
+; Error[6]                                             ; state.CalculateNewError ; yes                    ;
+; Error[5]                                             ; state.CalculateNewError ; yes                    ;
+; Error[4]                                             ; state.CalculateNewError ; yes                    ;
+; Error[11]                                            ; state.CalculateNewError ; yes                    ;
+; Error[10]                                            ; state.CalculateNewError ; yes                    ;
+; Error[9]                                             ; state.CalculateNewError ; yes                    ;
+; Error[8]                                             ; state.CalculateNewError ; yes                    ;
+; sAdc2[31]                                            ; state.Reset             ; yes                    ;
+; sAdc2[30]                                            ; state.Reset             ; yes                    ;
+; sAdc2[29]                                            ; state.Reset             ; yes                    ;
+; sAdc2[28]                                            ; state.Reset             ; yes                    ;
+; sAdc2[27]                                            ; state.Reset             ; yes                    ;
+; sAdc2[26]                                            ; state.Reset             ; yes                    ;
+; sAdc2[25]                                            ; state.Reset             ; yes                    ;
+; sAdc2[24]                                            ; state.Reset             ; yes                    ;
+; sAdc2[23]                                            ; state.Reset             ; yes                    ;
+; sAdc2[22]                                            ; state.Reset             ; yes                    ;
+; sAdc2[21]                                            ; state.Reset             ; yes                    ;
+; sAdc2[20]                                            ; state.Reset             ; yes                    ;
+; sAdc2[19]                                            ; state.Reset             ; yes                    ;
+; sAdc2[18]                                            ; state.Reset             ; yes                    ;
+; sAdc2[17]                                            ; state.Reset             ; yes                    ;
+; sAdc2[16]                                            ; state.Reset             ; yes                    ;
+; sAdc2[15]                                            ; state.Reset             ; yes                    ;
+; sAdc2[14]                                            ; state.Reset             ; yes                    ;
+; sAdc2[13]                                            ; state.Reset             ; yes                    ;
+; sAdc2[12]                                            ; state.Reset             ; yes                    ;
+; sAdc2[11]                                            ; state.Reset             ; yes                    ;
+; sAdc2[10]                                            ; state.Reset             ; yes                    ;
+; sAdc2[9]                                             ; state.Reset             ; yes                    ;
+; sAdc2[8]                                             ; state.Reset             ; yes                    ;
+; sAdc2[7]                                             ; state.Reset             ; yes                    ;
+; sAdc2[6]                                             ; state.Reset             ; yes                    ;
+; sAdc2[5]                                             ; state.Reset             ; yes                    ;
+; sAdc2[4]                                             ; state.Reset             ; yes                    ;
+; Number of user-specified and inferred latches = 132  ;                         ;                        ;
++------------------------------------------------------+-------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; half_duty_new[0..10]                   ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][10]                       ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][9]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][8]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][7]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][6]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][5]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][4]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][3]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][2]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][1]                        ; Stuck at GND due to stuck port data_in ;
+; half_duty[0][0]                        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 22 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                            ;
++-------------------+---------------------------+----------------------------------------+
+; Register name     ; Reason for Removal        ; Registers Removed due to This Register ;
++-------------------+---------------------------+----------------------------------------+
+; half_duty_new[10] ; Stuck at GND              ; half_duty[0][10]                       ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[9]  ; Stuck at GND              ; half_duty[0][9]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[8]  ; Stuck at GND              ; half_duty[0][8]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[7]  ; Stuck at GND              ; half_duty[0][7]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[6]  ; Stuck at GND              ; half_duty[0][6]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[5]  ; Stuck at GND              ; half_duty[0][5]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[4]  ; Stuck at GND              ; half_duty[0][4]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[3]  ; Stuck at GND              ; half_duty[0][3]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[2]  ; Stuck at GND              ; half_duty[0][2]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[1]  ; Stuck at GND              ; half_duty[0][1]                        ;
+;                   ; due to stuck port data_in ;                                        ;
+; half_duty_new[0]  ; Stuck at GND              ; half_duty[0][0]                        ;
+;                   ; due to stuck port data_in ;                                        ;
++-------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 73    ;
+; Number of registers using Synchronous Clear  ; 7     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 66    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 12    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; o_sclk~reg0                            ; 2       ;
+; o_ss~reg0                              ; 1       ;
+; o_mosi~reg0                            ; 3       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |adc_serial_control3|pwm_out[0]~reg0    ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |adc_serial_control3|r_counter_clock[6] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_serial_control3|r_counter_data[0]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |adc_serial_control3 ;
++-----------------+----------+--------------------------------------------------------+
+; Parameter Name  ; Value    ; Type                                                   ;
++-----------------+----------+--------------------------------------------------------+
+; CLK_DIV         ; 100      ; Signed Integer                                         ;
+; sys_clk         ; 50000000 ; Signed Integer                                         ;
+; pwm_freq        ; 15000    ; Signed Integer                                         ;
+; bits_resolution ; 12       ; Signed Integer                                         ;
+; phases          ; 1        ; Signed Integer                                         ;
++-----------------+----------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult4                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8            ; Untyped             ;
+; LPM_WIDTHB                                     ; 16           ; Untyped             ;
+; LPM_WIDTHP                                     ; 24           ; Untyped             ;
+; LPM_WIDTHR                                     ; 24           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES          ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult3                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 13           ; Untyped             ;
+; LPM_WIDTHB                                     ; 13           ; Untyped             ;
+; LPM_WIDTHP                                     ; 26           ; Untyped             ;
+; LPM_WIDTHR                                     ; 26           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 18             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_d2p ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 21             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_72p ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 15           ; Untyped             ;
+; LPM_WIDTHB                                     ; 12           ; Untyped             ;
+; LPM_WIDTHP                                     ; 27           ; Untyped             ;
+; LPM_WIDTHR                                     ; 27           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_5dt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 27           ; Untyped             ;
+; LPM_WIDTHB                                     ; 12           ; Untyped             ;
+; LPM_WIDTHP                                     ; 39           ; Untyped             ;
+; LPM_WIDTHR                                     ; 39           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_bdt     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 31             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_82p ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult2                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 12           ; Untyped             ;
+; LPM_WIDTHB                                     ; 12           ; Untyped             ;
+; LPM_WIDTHP                                     ; 24           ; Untyped             ;
+; LPM_WIDTHR                                     ; 24           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_vct     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 5              ;
+; Entity Instance                       ; lpm_mult:Mult4 ;
+;     -- LPM_WIDTHA                     ; 8              ;
+;     -- LPM_WIDTHB                     ; 16             ;
+;     -- LPM_WIDTHP                     ; 24             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; YES            ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; lpm_mult:Mult3 ;
+;     -- LPM_WIDTHA                     ; 13             ;
+;     -- LPM_WIDTHB                     ; 13             ;
+;     -- LPM_WIDTHP                     ; 26             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; YES            ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 15             ;
+;     -- LPM_WIDTHB                     ; 12             ;
+;     -- LPM_WIDTHP                     ; 27             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 27             ;
+;     -- LPM_WIDTHB                     ; 12             ;
+;     -- LPM_WIDTHP                     ; 39             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 12             ;
+;     -- LPM_WIDTHB                     ; 12             ;
+;     -- LPM_WIDTHP                     ; 24             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 10.0 Build 218 06/27/2010 SJ Web Edition
+    Info: Processing started: Thu Jun 14 09:19:46 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off adc_serial_control -c adc_serial_control
+Info: Found 2 design units, including 1 entities, in source file adc_serial_control.vhd
+    Info: Found design unit 1: adc_serial_control-rtl
+    Info: Found entity 1: adc_serial_control
+Info: Found 2 design units, including 1 entities, in source file adc_serial_control2.vhd
+    Info: Found design unit 1: adc_serial_control2-rtl
+    Info: Found entity 1: adc_serial_control2
+Warning: Can't analyze file -- file adc pwm.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file adc_serial_control3.vhd
+    Info: Found design unit 1: adc_serial_control3-rtl
+    Info: Found entity 1: adc_serial_control3
+Info: Found 2 design units, including 1 entities, in source file adc_serial_control4.vhd
+    Info: Found design unit 1: adc_serial_control4-rtl
+    Info: Found entity 1: adc_serial_control4
+Info: Elaborating entity "adc_serial_control3" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(53): used explicit default value for signal "p1" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(54): used explicit default value for signal "p2" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(55): used explicit default value for signal "p3" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(56): used explicit default value for signal "p4" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(72): used explicit default value for signal "Kp" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(77): used explicit default value for signal "SetVal" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(81): used explicit default value for signal "i" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at adc_serial_control3.vhd(81): used explicit default value for signal "d" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at adc_serial_control3.vhd(231): object "Output_Old" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at adc_serial_control3.vhd(232): object "Error_Old" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(241): signal "o_adc_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(244): signal "p1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(244): signal "sAdc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(244): signal "p2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(244): signal "p3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(244): signal "p4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(247): signal "Error" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(248): signal "Output" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(252): signal "SetVal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(252): signal "sAdc2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(253): signal "inter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(255): signal "Error" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(259): signal "Kp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(259): signal "Error" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(266): signal "p" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(266): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(266): signal "d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(280): signal "Output" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at adc_serial_control3.vhd(285): signal "DacDataCarrier" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "sAdc", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "sAdc2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "inter", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "Error", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "Error_History", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "p", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "Output", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "DacDataCarrier", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at adc_serial_control3.vhd(230): inferring latch(es) for signal or variable "DAC_DATA", which holds its previous value in one or more paths through the process
+Warning (10639): VHDL warning at adc_serial_control3.vhd(298): constant value overflow
+Info (10041): Inferred latch for "DAC_DATA[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DAC_DATA[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "DacDataCarrier[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Output[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "p[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[16]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[17]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[18]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[19]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[20]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[21]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[22]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[23]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[24]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[25]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[26]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[27]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[28]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[29]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[30]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "Error[31]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "inter[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[16]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[17]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[18]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[19]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[20]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[21]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[22]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[23]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[24]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[25]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[26]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[27]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[28]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[29]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[30]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc2[31]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[0]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[1]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[2]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[3]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[4]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[5]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[6]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[7]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[8]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[9]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[10]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[11]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[12]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[13]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[14]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[15]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[16]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[17]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[18]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[19]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[20]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[21]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[22]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[23]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[24]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[25]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[26]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[27]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[28]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[29]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[30]" at adc_serial_control3.vhd(230)
+Info (10041): Inferred latch for "sAdc[31]" at adc_serial_control3.vhd(230)
+Info: Inferred 8 megafunctions from design logic
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult4"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult3"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult2"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4"
+Info: Instantiated megafunction "lpm_mult:Mult4" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "8"
+    Info: Parameter "LPM_WIDTHB" = "16"
+    Info: Parameter "LPM_WIDTHP" = "24"
+    Info: Parameter "LPM_WIDTHR" = "24"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult4"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult4"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "lpm_mult:Mult4"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_dkh.tdf
+    Info: Found entity 1: add_sub_dkh
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult4"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_i9h.tdf
+    Info: Found entity 1: add_sub_i9h
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "lpm_mult:Mult4"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult4"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_gkh.tdf
+    Info: Found entity 1: add_sub_gkh
+Info: Elaborated megafunction instantiation "lpm_mult:Mult4|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult4"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3"
+Info: Instantiated megafunction "lpm_mult:Mult3" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "13"
+    Info: Parameter "LPM_WIDTHB" = "13"
+    Info: Parameter "LPM_WIDTHP" = "26"
+    Info: Parameter "LPM_WIDTHR" = "26"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info: Parameter "MAXIMIZE_SPEED" = "6"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult3"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult3"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "lpm_mult:Mult3"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_hkh.tdf
+    Info: Found entity 1: add_sub_hkh
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult3"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_n9h.tdf
+    Info: Found entity 1: add_sub_n9h
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "lpm_mult:Mult3"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult3"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_ckh.tdf
+    Info: Found entity 1: add_sub_ckh
+Info: Elaborated megafunction instantiation "lpm_mult:Mult3|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult3"
+Info: Elaborated megafunction instantiation "lpm_divide:Div2"
+Info: Instantiated megafunction "lpm_divide:Div2" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "32"
+    Info: Parameter "LPM_WIDTHD" = "18"
+    Info: Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_d2p.tdf
+    Info: Found entity 1: lpm_divide_d2p
+Info: Found 1 design units, including 1 entities, in source file db/abs_divider_8dg.tdf
+    Info: Found entity 1: abs_divider_8dg
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_eaf.tdf
+    Info: Found entity 1: alt_u_div_eaf
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info: Found entity 1: add_sub_7pc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info: Found entity 1: add_sub_8pc
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_m0a.tdf
+    Info: Found entity 1: lpm_abs_m0a
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_i0a.tdf
+    Info: Found entity 1: lpm_abs_i0a
+Info: Elaborated megafunction instantiation "lpm_divide:Div1"
+Info: Instantiated megafunction "lpm_divide:Div1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "32"
+    Info: Parameter "LPM_WIDTHD" = "21"
+    Info: Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_72p.tdf
+    Info: Found entity 1: lpm_divide_72p
+Info: Found 1 design units, including 1 entities, in source file db/abs_divider_2dg.tdf
+    Info: Found entity 1: abs_divider_2dg
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_2af.tdf
+    Info: Found entity 1: alt_u_div_2af
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_g0a.tdf
+    Info: Found entity 1: lpm_abs_g0a
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0"
+Info: Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "15"
+    Info: Parameter "LPM_WIDTHB" = "12"
+    Info: Parameter "LPM_WIDTHP" = "27"
+    Info: Parameter "LPM_WIDTHR" = "27"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Found 1 design units, including 1 entities, in source file db/mult_5dt.tdf
+    Info: Found entity 1: mult_5dt
+Info: Elaborated megafunction instantiation "lpm_mult:Mult1"
+Info: Instantiated megafunction "lpm_mult:Mult1" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "27"
+    Info: Parameter "LPM_WIDTHB" = "12"
+    Info: Parameter "LPM_WIDTHP" = "39"
+    Info: Parameter "LPM_WIDTHR" = "39"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Found 1 design units, including 1 entities, in source file db/mult_bdt.tdf
+    Info: Found entity 1: mult_bdt
+Info: Elaborated megafunction instantiation "lpm_divide:Div0"
+Info: Instantiated megafunction "lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "32"
+    Info: Parameter "LPM_WIDTHD" = "31"
+    Info: Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_82p.tdf
+    Info: Found entity 1: lpm_divide_82p
+Info: Found 1 design units, including 1 entities, in source file db/abs_divider_3dg.tdf
+    Info: Found entity 1: abs_divider_3dg
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_4af.tdf
+    Info: Found entity 1: alt_u_div_4af
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_h0a.tdf
+    Info: Found entity 1: lpm_abs_h0a
+Info: Elaborated megafunction instantiation "lpm_mult:Mult2"
+Info: Instantiated megafunction "lpm_mult:Mult2" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "12"
+    Info: Parameter "LPM_WIDTHB" = "12"
+    Info: Parameter "LPM_WIDTHP" = "24"
+    Info: Parameter "LPM_WIDTHR" = "24"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Found 1 design units, including 1 entities, in source file db/mult_vct.tdf
+    Info: Found entity 1: mult_vct
+Info: Ignored 40 buffer(s)
+    Info: Ignored 40 SOFT buffer(s)
+Warning: The following nodes have both tri-state and non-tri-state drivers
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[0]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[1]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[2]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[3]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[4]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[5]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[6]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[7]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[8]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[9]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[10]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "o_adc_data[11]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[2]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[3]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[4]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[5]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[6]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[7]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[8]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[9]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[10]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[11]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[12]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[13]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[14]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "DAC_DATA[15]" and its non-tri-state driver.
+Warning: The following tri-state nodes are fed by constants
+    Warning: The pin "DAC_DATA[0]" is fed by GND
+    Warning: The pin "DAC_DATA[1]" is fed by GND
+Info: One or more bidirs are fed by always enabled tri-state buffers
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[0]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[1]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[2]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[3]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[4]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[5]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[6]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[7]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[8]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[9]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[10]" is moved to its source
+    Info: Fan-out of permanently enabled tri-state buffer feeding bidir "o_adc_data[11]" is moved to its source
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: TRI or OPNDRN buffers permanently enabled
+    Warning: Node "o_adc_data[0]~synth"
+    Warning: Node "o_adc_data[1]~synth"
+    Warning: Node "o_adc_data[2]~synth"
+    Warning: Node "o_adc_data[3]~synth"
+    Warning: Node "o_adc_data[4]~synth"
+    Warning: Node "o_adc_data[5]~synth"
+    Warning: Node "o_adc_data[6]~synth"
+    Warning: Node "o_adc_data[7]~synth"
+    Warning: Node "o_adc_data[8]~synth"
+    Warning: Node "o_adc_data[9]~synth"
+    Warning: Node "o_adc_data[10]~synth"
+    Warning: Node "o_adc_data[11]~synth"
+    Warning: Node "DAC_DATA[2]~synth"
+    Warning: Node "DAC_DATA[3]~synth"
+    Warning: Node "DAC_DATA[4]~synth"
+    Warning: Node "DAC_DATA[5]~synth"
+    Warning: Node "DAC_DATA[6]~synth"
+    Warning: Node "DAC_DATA[7]~synth"
+    Warning: Node "DAC_DATA[8]~synth"
+    Warning: Node "DAC_DATA[9]~synth"
+    Warning: Node "DAC_DATA[10]~synth"
+    Warning: Node "DAC_DATA[11]~synth"
+    Warning: Node "DAC_DATA[12]~synth"
+    Warning: Node "DAC_DATA[13]~synth"
+    Warning: Node "DAC_DATA[14]~synth"
+    Warning: Node "DAC_DATA[15]~synth"
+Info: Timing-Driven Synthesis is running
+Info: Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|alt_u_div_eaf:divider|add_sub_22_result_int[4]~30"
+    Info (17048): Logic cell "lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|alt_u_div_eaf:divider|add_sub_22_result_int[3]~32"
+    Info (17048): Logic cell "lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|alt_u_div_eaf:divider|add_sub_22_result_int[2]~34"
+    Info (17048): Logic cell "lpm_divide:Div2|lpm_divide_d2p:auto_generated|abs_divider_8dg:divider|alt_u_div_eaf:divider|add_sub_22_result_int[1]~36"
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Warning: Design contains 17 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ena"
+    Warning (15610): No output dependent on input pin "ADC_DATA[0]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[1]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[2]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[3]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[4]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[5]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[6]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[7]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[8]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[9]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[10]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[11]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[12]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[13]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[14]"
+    Warning (15610): No output dependent on input pin "ADC_DATA[15]"
+Info: Implemented 2065 device resources after synthesis - the final resource count might be different
+    Info: Implemented 25 input pins
+    Info: Implemented 9 output pins
+    Info: Implemented 28 bidirectional pins
+    Info: Implemented 1995 logic cells
+    Info: Implemented 8 DSP elements
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 115 warnings
+    Info: Peak virtual memory: 357 megabytes
+    Info: Processing ended: Thu Jun 14 09:20:05 2018
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:22
+
+
